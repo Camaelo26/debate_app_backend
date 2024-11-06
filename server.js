@@ -6,7 +6,8 @@ const debateController = require('./controllers/debateController'); // Import de
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000' })); // Replace with your frontend URL
+
 
 // Define a simple route for the root path
 app.get('/', (req, res) => {
