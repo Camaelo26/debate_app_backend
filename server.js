@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(cors());
 
+// Define a simple route for the root path
+app.get('/', (req, res) => {
+  res.send('Backend is deployed and running');
+});
+
 // Define a route for starting the debate
 app.post('/startDebate', debateController.startDebate);
 
